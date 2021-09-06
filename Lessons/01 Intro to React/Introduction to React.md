@@ -4,7 +4,7 @@ Learn what React is, why we use it, and a high-level overview of how it works.
 
 ## Table of contents
 
-* [What is React?](#a-namewhat-is-reactwhat-is-reacta)
+* [What is React?](#what-is-react)
 * [Imperative vs Declarative Programming](#a-nameimperative-vs-declarative-programmingimperative-vs-declarative-programminga)
 * [Library vs Framework](#a-namelibrary-vs-frameworklibrary-vs-frameworka)
 * [JSX](#a-namejsxjsxa)
