@@ -6,8 +6,6 @@ Learn what React is, why we use it, and a high-level overview of how it works.
 
 * [What is React?](#what-is-react)
 * [Imperative vs Declarative Programming](#imperative-vs-declarative-programming)
-  * [Imperative Programming](#imperative-programming)
-  * [Declarative Programming](#declarative-programming)
 * [Library vs Framework](#library-vs-framework)
 * [JSX](#jsx)
 * [Components](#components)
@@ -33,11 +31,25 @@ component. *Side effects can cause bugs, and make testing difficult.*
 >* Its return value is always the same for the same input values
 
 ### <a name="imperative-vs-declarative-programming">Imperative vs Declarative Programming</a>
+
 ![Imperative versus declarative programming](../../assets/images/imperative%20vs%20declarative.jpeg)
 
-#### <a name="imperative-programming">Imperative Programming</a>
+Imperative code uses statements and declarative code uses expressions. Expressions evaluate to a value while statements
+tell the computer to do something.
 
-#### <a name="declarative-programming">Declarative Programming</a>
+In **imperative programming**, your code is based on statements that change the program state by telling the computer
+how to do things. In other words, your code is based on defining variables and changing the values of those variables.
+
+In **declarative programming**, your code is based on expressions that evaluate their result based on their input by
+telling the computer what you want.
+
+Expressions focus on taking input and providing output while relying only on the input itself. Such expression is called
+pure function in functional programming.
+
+Statements don’t necessarily need any input or output, they can just call other functions or change some value somewhere
+outside their internal state. In declarative functional programming, changing the external state or causing external
+actions such as console log, saving a file, or loading database record is called a side effect. Changing a value of
+anything is called a mutation. In functional programming, we prefer to always stick to constants.
 
 ### <a name="library-vs-framework">Library vs Framework</a>
 
