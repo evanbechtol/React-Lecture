@@ -58,6 +58,7 @@ When we talk about declarative code focusing on telling a computer what to do, w
 inputs into outputs.
 
 ### <a name="library-vs-framework">Library vs Framework</a>
+![Library versus framework](../../assets/images/library%20vs%20framework.png)
 
 ### <a name="jsx">JSX</a>
 
