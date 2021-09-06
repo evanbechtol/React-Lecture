@@ -51,6 +51,12 @@ outside their internal state. In declarative functional programming, changing th
 actions such as console log, saving a file, or loading database record is called a side effect. Changing a value of
 anything is called a mutation. In functional programming, we prefer to always stick to constants.
 
+When we talk about imperative code telling the computer how to do things, we mean that it focuses on creating statements
+that tell the computer how to do its thing.
+
+When we talk about declarative code focusing on telling a computer what to do, we mean working with expressions that map
+inputs into outputs.
+
 ### <a name="library-vs-framework">Library vs Framework</a>
 
 ### <a name="jsx">JSX</a>
