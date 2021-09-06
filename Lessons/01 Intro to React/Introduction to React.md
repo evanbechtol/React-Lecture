@@ -33,7 +33,7 @@ component. *Side effects can cause bugs, and make testing difficult.*
 >* Its return value is always the same for the same input values
 
 ### <a name="imperative-vs-declarative-programming">Imperative vs Declarative Programming</a>
-<img src="../../assets/images/imperative%20vs%20declarative.jpeg" alt="imperative versus declarative programming"/>
+![Imperative versus declarative programming](../../assets/images/imperative%20vs%20declarative.jpeg)
 
 #### <a name="imperative-programming">Imperative Programming</a>
 
