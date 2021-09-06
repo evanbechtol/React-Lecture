@@ -6,6 +6,8 @@ Learn what React is, why we use it, and a high-level overview of how it works.
 
 * [What is React?](#what-is-react)
 * [Imperative vs Declarative Programming](#imperative-vs-declarative-programming)
+  * [Imperative Programming](#imperative-programming)
+  * [Declarative Programming](#declarative-programming)
 * [Library vs Framework](#library-vs-framework)
 * [JSX](#jsx)
 * [Components](#components)
@@ -31,8 +33,11 @@ component. *Side effects can cause bugs, and make testing difficult.*
 >* Its return value is always the same for the same input values
 
 ### <a name="imperative-vs-declarative-programming">Imperative vs Declarative Programming</a>
+<img src="../../assets/images/imperative%20vs%20declarative.jpeg" alt="imperative versus declarative programming"/>
 
-One of the core
+#### <a name="imperative-programming">Imperative Programming</a>
+
+#### <a name="declarative-programming">Declarative Programming</a>
 
 ### <a name="library-vs-framework">Library vs Framework</a>
 
