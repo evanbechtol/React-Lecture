@@ -96,8 +96,18 @@ properties:
 * The item in the first index is the current value of the state variable
 * The second item is an updater function. We will call this function each and every time we need to make an update to
   our state variable.
+    * **IMPORTANT:** All calls to the updater method are asynchronous. State updates are queued, and multiple state
+    updates are not necessarily done in order.
     * **IMPORTANT:** Whenever you call the updater function, it will *overwrite* the previous state. This needs to be
       taken into consideration when updating your variables. Specifically in the case where your variable is an object.
+      Here is an example of how to update an object, without over-writing it:
+
+    ```
+      setCount((prevState) => ({
+        ...prevState,
+        //Update existing key/value pairs, or add new key/value pairs
+      );
+    ```
 
 #### <a name="component-composition">Component Composition</a>
 
