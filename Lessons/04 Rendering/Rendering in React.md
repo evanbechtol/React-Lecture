@@ -24,13 +24,13 @@ Because React is declarative, we are telling it what state we want the UI to be 
 that desired state. This is why you don't have to worry about manual DOM updates with React, setting up event handlers
 with `document.addEventListener()`, or manual attribute manipulation.
 
-#### <a name="reconciliation">Reconciliation</a>
+### <a name="reconciliation">Reconciliation</a>
 
 Reconciliation is the process by which React determines what needs to be updated to bring the DOM to the desired state.
 It utilizes a diffing algorithm, which compares two tress. Starting at the root node, it will determine what needs to be
 done based on the type of element in that node. It will then recurse through the children of the node, and compare them.
 
-##### <a name="elements-of-different-types">Elements of Different Types</a>
+#### <a name="elements-of-different-types">Elements of Different Types</a>
 
 For example, let's say that you have made an update to state or props for a component:
 
@@ -51,7 +51,7 @@ component will be torn down by calling the React lifecycle method `componentWill
 tree is torn down, and rebuilt. As you could imagine, this can be an expensive process if the component becomes
 complicated, or this component is being rendered as part of a list of items.
 
-##### <a name="dom-elements-of-the-same-type">DOM Elements of The Same Type</a>
+#### <a name="dom-elements-of-the-same-type">DOM Elements of The Same Type</a>
 
 When two React DOM elements of the same type are compared, their attributes are compared instead. This alleviates the
 need to tear down the entire node, and instead only updates the changed attributes. This is a much more efficient
