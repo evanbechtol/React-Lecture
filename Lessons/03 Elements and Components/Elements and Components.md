@@ -6,6 +6,7 @@ Learn about the building blocks that make a React application work, and their di
 
 * [Elements](#elements)
 * [Components](#components)
+    * [Component Props](#component-props)
     * [Stateless Components](#stateless-components)
     * [Stateless and Stateful Components](#stateless-and-stateful-components)
     * [Component Composition](#component-composition)
@@ -45,6 +46,50 @@ readability (among other things).
   which is an important aspect of React.
 * Always return the same output, given the same input.
 * Never attempt to modify its properties. Instead, it should modify its own internal state.
+
+#### <a name="component-props">Component Props</a>
+
+You can pass data from a parent to a child component via attributes. You can access the data inside the child component
+through a special object called `props`. Regardless of what type of component you have, function or class, a component
+cannot modify its props. This relates back to our functional component concepts that we talked about earlier.
+
+```javascript
+import React from "react";
+
+const ChildComponent = ( props ) => {
+  return (
+    <div>
+      <h1>{props.header}</h1>
+      <p>{props.body}</p>
+
+      <ul>
+        {
+          props.list.map( item => <li>{item}</li> )
+        }
+      </ul>
+    </div>
+  );
+};
+
+const Parent = () => {
+  const myList = [ 1, 2, 3 ];
+
+  return (
+    <div>
+      <ChildComponent
+        header="Hello!"
+        body="Some text"
+        list={mylist}>
+      </ChildComponent>
+    </div>
+  );
+};
+
+export default Parent;
+```
+
+In the above example, we are passing data to our child component by adding attributes to the Component tag. We can add
+anything that we want to our component, and then access it from the child component by accessing the `props` object.
 
 #### <a name="stateless-and-stateful-components">Stateless and Stateful Components</a>
 
@@ -97,7 +142,7 @@ properties:
 * The second item is an updater function. We will call this function each and every time we need to make an update to
   our state variable.
     * **IMPORTANT:** All calls to the updater method are asynchronous. State updates are queued, and multiple state
-    updates are not necessarily done in order.
+      updates are not necessarily done in order.
     * **IMPORTANT:** Whenever you call the updater function, it will *overwrite* the previous state. This needs to be
       taken into consideration when updating your variables. Specifically in the case where your variable is an object.
       Here is an example of how to update an object, without over-writing it:
