@@ -57,7 +57,7 @@ When two React DOM elements of the same type are compared, their attributes are 
 need to tear down the entire node, and instead only updates the changed attributes. This is a much more efficient
 update! Once the reconciliation is done on those nodes, the algorithm recurses on the child nodes.
 
-##### <a name="component-elements-of-the-same-type">Component Elements of The Same Type</a>
+#### <a name="component-elements-of-the-same-type">Component Elements of The Same Type</a>
 
 When a component updates, the instance remains the same (think of your state persisting inside your component between
 renders). React will update the props of the underlying component instance to match the new element and
