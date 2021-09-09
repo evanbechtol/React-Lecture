@@ -13,7 +13,7 @@ avoid making mistakes which can lead to slow rendering, unexpected behavior, or 
   * [Elements of Different Types](#elements-of-different-types)
   * [DOM Elements of The Same Type](#dom-elements-of-the-same-type)
   * [Component Elements of The Same Type](#component-elements-of-the-same-type)
-  * 
+  
 ### <a name="virtual-dom-and-internals">Virtual DOM and Internals</a>
 
 React keeps a virtual representation of the DOM (VDOM) in memory. This virtual representation is kept in sync with the
