@@ -8,7 +8,12 @@ Understanding how React handles rendering components and elements will help you 
 avoid making mistakes which can lead to slow rendering, unexpected behavior, or bottlenecks for your end-users.
 
 ## Table of contents
-
+* [Virtual DOM and Internals](#virtual-dom-and-internals)
+* [Reconciliation](#reconciliation)
+  * [Elements of Different Types](#elements-of-different-types)
+  * [DOM Elements of The Same Type](#dom-elements-of-the-same-type)
+  * [Component Elements of The Same Type](#component-elements-of-the-same-type)
+  * 
 ### <a name="virtual-dom-and-internals">Virtual DOM and Internals</a>
 
 React keeps a virtual representation of the DOM (VDOM) in memory. This virtual representation is kept in sync with the
@@ -58,5 +63,3 @@ When a component updates, the instance remains the same (think of your state per
 renders). React will update the props of the underlying component instance to match the new element and
 calls `componentDidUpdate()`. This triggers a call to the `render()` method, which invokes our reconciliation process
 and thus the diffing algorithm to execute.
-
-##### <a name="recursing-on-children">Recursing on Children</a>
