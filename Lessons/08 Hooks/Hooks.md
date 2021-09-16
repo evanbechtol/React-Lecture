@@ -59,9 +59,9 @@ import { useState } from "react";
 
 const MyComponent = ( props ) => {
   const [ count, setCount ] = useState( 0 ); // This is how we initialize a state
-  
-  const handleButtonClick = (e) => setCount(count++);
-  
+
+  const handleButtonClick = ( e ) => setCount( count + 1 );
+
   return (
     <div>
       <p>The count is: {count}</p>
@@ -72,5 +72,44 @@ const MyComponent = ( props ) => {
 
 export default MyComponent;
 ```
+
+In the example above, we initialize a state called `count`, with an initial value of `0`. Then, whenever we click a
+button the event handler will call our state updater method, `setCount`, which will increment our state value by one.
+When the call to `setCount` happens, React will go through the reconciliation process, and determine what (if anything)
+needs to be updated.
+
+Now let's look at an example where the state is not a primitive type. This time, let's initialize our state as an object
+with some properties. When we update that object, we need to remember that calls to our updater method overwrite the
+state, they do not merge it.
+
+```javascript
+import { useState } from "react";
+
+const MyComponent = ( props ) => {
+  const [ data, setData ] = useState( { name: "count", value: 0 } ); // This is how we initialize a state
+
+  const handleIncreaseCount = ( e ) => {
+    // We are making sure that we take all the previous key-value pairs
+    // from our previous state, and udpating the sate afterwards
+    setData( ( prevState ) => ( {
+      ...prevState,
+      value: data.value + 1
+    } ) );
+  };
+
+  return (
+    <div>
+      <p>The {data.name} is: {data.value}</p>
+      <button onClick={handleIncreaseCount}>Click Me</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+```
+
+Now we are only updating the key-value pairs which come after `...prevState`. This approach allows us to merge changes
+without completely over-writing the state. Of course, there are cases in which you may need to do that, but in this case
+we only want to update a specific key-value pair.
 
 ### <a name="state-hook">Effect hook</a>

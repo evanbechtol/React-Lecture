@@ -122,7 +122,7 @@ Now let's take a look at an example of a **stateful component:**
     const Counter = (props) => {
         const [count, setCount] = useState(0);
 
-        const handleClickCount = (e) => setCount(count++)
+        const handleClickCount = (e) => setCount(count + 1)
 
         return (
             <div className="counter__container">
