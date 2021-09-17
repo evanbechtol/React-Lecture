@@ -55,19 +55,19 @@ the implementation is entirely up to you.
 > We'll show an example of how to handle that soon
 
 ```javascript
-import { useState } from "react";
+import {useState} from "react";
 
-const MyComponent = ( props ) => {
-  const [ count, setCount ] = useState( 0 ); // This is how we initialize a state
+const MyComponent = (props) => {
+    const [count, setCount] = useState(0); // This is how we initialize a state
 
-  const handleButtonClick = ( e ) => setCount( count + 1 );
+    const handleButtonClick = (e) => setCount(count + 1);
 
-  return (
-    <div>
-      <p>The count is: {count}</p>
-      <button onClick={handleButtonClick}>Click Me</button>
-    </div>
-  );
+    return (
+        <div>
+            <p>The count is: {count}</p>
+            <button onClick={handleButtonClick}>Click Me</button>
+        </div>
+    );
 };
 
 export default MyComponent;
@@ -83,26 +83,26 @@ with some properties. When we update that object, we need to remember that calls
 state, they do not merge it.
 
 ```javascript
-import { useState } from "react";
+import {useState} from "react";
 
-const MyComponent = ( props ) => {
-  const [ data, setData ] = useState( { name: "count", value: 0 } ); // This is how we initialize a state
+const MyComponent = (props) => {
+    const [data, setData] = useState({name: "count", value: 0}); // This is how we initialize a state
 
-  const handleIncreaseCount = ( e ) => {
-    // We are making sure that we take all the previous key-value pairs
-    // from our previous state, and udpating the sate afterwards
-    setData( ( prevState ) => ( {
-      ...prevState,
-      value: data.value + 1
-    } ) );
-  };
+    const handleIncreaseCount = (e) => {
+        // We are making sure that we take all the previous key-value pairs
+        // from our previous state, and udpating the sate afterwards
+        setData((prevState) => ({
+            ...prevState,
+            value: data.value + 1
+        }));
+    };
 
-  return (
-    <div>
-      <p>The {data.name} is: {data.value}</p>
-      <button onClick={handleIncreaseCount}>Click Me</button>
-    </div>
-  );
+    return (
+        <div>
+            <p>The {data.name} is: {data.value}</p>
+            <button onClick={handleIncreaseCount}>Click Me</button>
+        </div>
+    );
 };
 
 export default MyComponent;
@@ -113,3 +113,12 @@ without completely over-writing the state. Of course, there are cases in which y
 we only want to update a specific key-value pair.
 
 ### <a name="state-hook">Effect hook</a>
+
+The `useEffect` hook allows us to perform side effects in our components. Side effects are anything that we want to do
+after our component renders. This serves the same purpose as writing the lifecycle methods: `componentDidMount`
+, `componentDidUpdate`, `componentWillUnmount`. Some examples that of side effects that we can use this hook to handle
+are: data fetching, subscribing and unsubscribing, manually updating the DOM, or anything that has the potential to
+affect other components and shouldn't be done during render.
+
+> **IMPORTANT:** React will run the hook after every render! We can also provide a **cleanup** callback method,
+>  which is called when the component is unmounted
