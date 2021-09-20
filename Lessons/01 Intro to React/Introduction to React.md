@@ -7,9 +7,6 @@ Learn what React is, why we use it, and a high-level overview of how it works.
 * [What is React?](#what-is-react)
 * [Imperative vs Declarative Programming](#imperative-vs-declarative-programming)
 * [Library vs Framework](#library-vs-framework)
-* [JSX](#jsx)
-* [Components](#components)
-* [Rendering](#rendering)
 
 ### <a name="what-is-react">What is React?</a>
 
@@ -60,8 +57,3 @@ inputs into outputs.
 ### <a name="library-vs-framework">Library vs Framework</a>
 ![Library versus framework](../../assets/images/library%20vs%20framework.png)
 
-### <a name="jsx">JSX</a>
-
-### <a name="components">Components</a>
-
-### <a name="rendering">Rendering</a>
