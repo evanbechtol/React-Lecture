@@ -19,8 +19,10 @@ Learn about the building blocks that make a React application work, and their di
 
 #### What does an element look like?
 
+```javascript
     const element = <h1>Hello, world!</h1>;
-    ReactDOM.render(element, document.querySelector("#root"));
+ReactDOM.render(element, document.querySelector("#root"));
+```
 
 It's really that simple! In the above example, we create an element, and then render it to a DOM node identified by the
 id "root".
@@ -56,33 +58,33 @@ cannot modify its props. This relates back to our functional component concepts 
 ```javascript
 import React from "react";
 
-const ChildComponent = ( props ) => {
-  return (
-    <div>
-      <h1>{props.header}</h1>
-      <p>{props.body}</p>
+const ChildComponent = (props) => {
+    return (
+        <div>
+            <h1>{props.header}</h1>
+            <p>{props.body}</p>
 
-      <ul>
-        {
-          props.list.map( item => <li>{item}</li> )
-        }
-      </ul>
-    </div>
-  );
+            <ul>
+                {
+                    props.list.map(item => <li>{item}</li>)
+                }
+            </ul>
+        </div>
+    );
 };
 
 const Parent = () => {
-  const myList = [ 1, 2, 3 ];
+    const myList = [1, 2, 3];
 
-  return (
-    <div>
-      <ChildComponent
-        header="Hello!"
-        body="Some text"
-        list={mylist}>
-      </ChildComponent>
-    </div>
-  );
+    return (
+        <div>
+            <ChildComponent
+                header="Hello!"
+                body="Some text"
+                list={mylist}>
+            </ChildComponent>
+        </div>
+    );
 };
 
 export default Parent;
@@ -99,40 +101,44 @@ which stateless components present the data that is provided to them via their "
 
 An example of a **stateless component** could be a card or tile header:
 
-    import React from "react";
+```javascript
+import React from "react";
 
-    const CardHeader = (props) => {
-        return (
-            <div className="header__container">
-                <h1 className="header__title">{props.title}</h1>
-                <small className="header__subject">{props.subject}</small>
-            </div>
-        );
-    };
+const CardHeader = (props) => {
+    return (
+        <div className="header__container">
+            <h1 className="header__title">{props.title}</h1>
+            <small className="header__subject">{props.subject}</small>
+        </div>
+    );
+};
 
-    export default CardHeader;
+export default CardHeader;
+```
 
 In the example above, we are creating a stateless component, which will only present the data that is passed in. We do
 not have any internal state, and we are not modifying anything in the component.
 
 Now let's take a look at an example of a **stateful component:**
 
-    import React, {useState} from "react";
+```javascript
+ import React, {useState} from "react";
 
-    const Counter = (props) => {
-        const [count, setCount] = useState(0);
+const Counter = (props) => {
+    const [count, setCount] = useState(0);
 
-        const handleClickCount = (e) => setCount(count + 1)
+    const handleClickCount = (e) => setCount(count + 1)
 
-        return (
-            <div className="counter__container">
-                <p className="counter__count">{count}</h1>
-                <button onClick={handleClickCount}>Increase Count</button>
-            </div>
-        );
-    };
+    return (
+        <div className="counter__container">
+            <p className="counter__count">{count}</h1>
+            <button onClick={handleClickCount}>Increase Count</button>
+        </div>
+    );
+};
 
-    export default Counter;
+export default Counter;
+```
 
 In that example, we initialize an internal state with the call to `useState`. Don't worry if you haven't seen this
 before, it's a React Hook (we'll get more into hooks in another section). `useState` is a function call that returns two
@@ -147,7 +153,7 @@ properties:
       taken into consideration when updating your variables. Specifically in the case where your variable is an object.
       Here is an example of how to update an object, without over-writing it:
 
-    ```
+    ```javascript
       setCount((prevState) => ({
         ...prevState,
         //Update existing key/value pairs, or add new key/value pairs
@@ -164,33 +170,32 @@ creating components which are more generic at a high-level, and use specialized 
 One such example is creating a container component, which can accept child components. Those child components are
 accessed from the container component through a special prop called `children`. Let's take a look at how this works:
 
-    import React from "react";
+```javascript
+import React from "react";
 
-    const Card = ( props ) => {
-      return (
+const Card = (props) => {
+    return (
         <div className="card">
-          {props.children}
+            {props.children}
         </div>
-      );
-    };
+    );
+};
 
-    const MyApp = ( props ) => {
-      return (
+const MyApp = (props) => {
+    return (
         <Card>
-          <h1>Card header</h1>
-          <div>
-            <p>
-              I can put anything here, and it will be accessible in the
-              card by accessing props.children
-            </p>
-          </div>
+            <h1>Card header</h1>
+            <div>
+                <p>
+                    I can put anything here, and it will be accessible in the
+                    card by accessing props.children
+                </p>
+            </div>
         </Card>
-      );
-    };
-
-export default App;
-
-    export default MyApp;
+    );
+};
+export default MyApp;
+```
 
 Here, we are creating a *very* basic card component. Imagine that this card has some styles that we wish to reuse, and
 we just want to accept whatever the user puts into this card, then render it.
