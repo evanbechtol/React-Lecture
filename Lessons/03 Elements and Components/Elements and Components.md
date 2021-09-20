@@ -20,7 +20,7 @@ Learn about the building blocks that make a React application work, and their di
 #### What does an element look like?
 
 ```javascript
-    const element = <h1>Hello, world!</h1>;
+const element = <h1>Hello, world!</h1>;
 ReactDOM.render(element, document.querySelector("#root"));
 ```
 
