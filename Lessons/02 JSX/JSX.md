@@ -1,4 +1,4 @@
-# Introduction to React ⚛
+# JSX ⚛
 
 JSX powers our React applications and is a core technology for how React is able to provide some of the functionality
 that it does. We are going to dive into what JSX is, the rules, and some tricks to mastering it!
