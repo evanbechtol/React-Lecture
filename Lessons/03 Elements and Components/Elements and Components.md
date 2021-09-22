@@ -24,8 +24,27 @@ const element = <h1>Hello, world!</h1>;
 ReactDOM.render(element, document.querySelector("#root"));
 ```
 
-It's really that simple! In the above example, we create an element, and then render it to a DOM node identified by the
-id "root".
+If you `console.log` a React element, you'll see something like this:
+```javascript
+Object { "$$typeof": Symbol("react.element"), type: CreatePost(props), key: null, ref: null, props: {…}, _owner: {…}, _store: {…}, … }
+  "$$typeof": Symbol("react.element")
+  _owner: Object { tag: 0, key: null, index: 1, … }
+  _self: undefined
+  _source: Object { fileName: "file/path/to/a/component", lineNumber: 34, columnNumber: 33 }
+  _store: Object { … }
+  key: null
+  props: Object { className: "create-post__container", onCreatePost: handleCreatePost(e) }
+  className: "create-post__container"
+  onCreatePost: function handleCreatePost(e)
+  <prototype>: Object { … }
+  ref: null
+  type: function CreatePost(props)
+  <prototype>: Object { … }
+}
+```
+
+This is what a React element looks like under the hood. It's just a JavaScript object, with some special keys that React 
+uses.
 
 #### Updating rendered Elements
 

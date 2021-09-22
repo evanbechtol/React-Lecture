@@ -13,8 +13,16 @@ Learn what React is, why we use it, and a high-level overview of how it works.
 From the [Official React documentation](https://reactjs.org/tutorial/tutorial.html):
 > React is a **declarative**, efficient, and flexible JavaScript **library** for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
 
+When we say that it is declarative, what we are really saying is this; we tell React the desired end state, and it
+handles reaching that state. This is different from an *imperative* approach, where we would give it the exact playbook
+and recipe for building the UI with a desired state.
+
 React's power comes from allowing us to create reusable components, composing those components, and handles rendering
 those components and an efficient and optimized way (we'll get more into that in a bit).
+
+At its core, React is maintaining a tree of objects. These objects are elements, which are then created and added to the
+DOM. Using an efficient diffing algorithm, it is able to compare these objects and determine what needs to be done to
+bring the UI to our desired state.
 
 Because React is (partially) built
 with [functional programming](https://opensource.com/article/17/6/functional-javascript)
@@ -55,5 +63,6 @@ When we talk about declarative code focusing on telling a computer what to do, w
 inputs into outputs.
 
 ### <a name="library-vs-framework">Library vs Framework</a>
+
 ![Library versus framework](../../assets/images/library%20vs%20framework.png)
 
